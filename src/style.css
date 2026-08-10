@@ -248,6 +248,12 @@ section h2 {
 .tag-cloud { color: var(--ctp-sapphire); }
 .tag-infra { color: var(--ctp-yellow); }
 
+/* .highlight { color: var(--bg); background-color: var(--accent); } */
+.highlight { 
+  color: var(--accent); 
+  font-weight: 600;
+}
+
 article {
   margin-bottom: 0.9em;
 }
@@ -267,11 +273,36 @@ article:last-child {
       'bg     bg      proj    proj     proj';
   }
 
-  header { grid-area: header; }
+  header { 
+    grid-area: header; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center
+  }
   .panel-background { grid-area: bg; }
   .panel-skills { grid-area: skills; }
   .panel-certs { grid-area: cert; }
   .panel-projects { grid-area: proj; }
+}
+
+#avatar {
+  width: 30%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 2px solid var(--border);
+  background-color: var(--ctp-surface0);
+  margin-bottom: 2em;
+}
+
+#banner {
+  height: auto;
+  width: 70%;
+}
+
+#banner-container {
+  display: flex;
+  width: 100%;
 }
 
 #links {
