@@ -51,7 +51,7 @@
   --radius-sm: 4px;
   --radius: 8px;
   --radius-lg: 12px;
-  --content-width: 1000px;
+  --content-width: 1500px;
 }
 
 *,
@@ -81,6 +81,10 @@ main {
   min-width: 350px;
   width: min(calc(100% - 2rem), var(--content-width));
   margin-inline: auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  align-items: start;
 }
 
 h1,
@@ -91,21 +95,27 @@ h5,
 h6 {
   margin: 0 0 0.5em;
   color: var(--fg);
-  font-weight: 700;
+  font-weight: 500;
   line-height: 1.2;
+  font-size: 1rem;
 }
 
 h1 {
-  font-size: 2rem;
+  font-weight: 700;
   color: var(--accent);
 }
 
 h2 {
-  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--ctp-sapphire)
 }
 
 h3 {
-  font-size: 1.25rem;
+  color: var(--ctp-teal)
+}
+
+h4 {
+  color: var(--ctp-peach)
 }
 
 p {
@@ -164,9 +174,37 @@ hr {
 }
 
 header, section {
-  margin: 1em;
   padding: 1em;
   border: 2px solid var(--border);
+  min-height: 0;
+  height: 100%;
+  width: 100%;
+}
+
+@media (min-width: 1024px) {
+  main {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    grid-template-rows: repeat(4, minmax(0, 1fr));
+    grid-template-areas:
+      'header header  skills  skills   cert'
+      'header header  proj    proj     proj'
+      'bg     bg      proj    proj     proj'
+      'bg     bg      proj    proj     proj';
+  }
+
+  header { grid-area: header; }
+  .panel-background { grid-area: bg; }
+  .panel-skills { grid-area: skills; }
+  .panel-certs { grid-area: cert; }
+  .panel-projects { grid-area: proj; }
+}
+
+#links {
+  display: flex;
+  gap: 1rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
 ::selection {
