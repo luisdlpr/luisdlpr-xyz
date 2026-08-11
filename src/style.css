@@ -52,7 +52,7 @@
   --radius: 8px;
   --radius-lg: 12px;
   --content-width: 1700px;
-  --halftone-size: 1vmin;
+  --halftone-size: max(1vmin, 7px);
 }
 
 *,
@@ -68,11 +68,11 @@ html {
 body {
   margin: 0;
   min-height: 100vh;
-  /* background-color: var(--bg); */
   color: var(--fg);
   font-family: var(--font-mono);
   font-size: 16px;
   line-height: 1.6;
+  background-color: black;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -81,7 +81,6 @@ main {
   padding: 1em;
   margin: 2em;
   border-radius: var(--radius);
-  background-color: var(--bg);
   min-width: 350px;
   width: min(calc(100% - 2rem), var(--content-width));
   margin-inline: auto;
@@ -89,6 +88,10 @@ main {
   grid-template-columns: 1fr;
   gap: 1rem;
   align-items: start;
+
+  background: rgba(24, 24, 37, 0.7);
+  -webkit-backdrop-filter: blur(15px);
+  backdrop-filter: blur(15px);
 }
 
 h1,
@@ -238,8 +241,6 @@ section h2 {
   font-size: 0.75em;
   line-height: 1;
   padding: 0.35em 0.6em;
-  /* border-radius: 999px; */
-  /* border: 1px solid var(--bg-selected); */
   background: var(--bg-highlight);
 }
 
@@ -249,7 +250,6 @@ section h2 {
 .tag-cloud { color: var(--ctp-sapphire); }
 .tag-infra { color: var(--ctp-yellow); }
 
-/* .highlight { color: var(--bg); background-color: var(--accent); } */
 .highlight { 
   color: var(--accent); 
   font-weight: 600;
@@ -322,7 +322,7 @@ article:last-child {
   position: fixed;
   top: 0;
   left: 0;
-  filter: contrast(250);
+  filter: contrast(5);
   background-color: var(--ctp-crust);
 }
 
@@ -341,7 +341,7 @@ article:last-child {
 
 .bg-img {
   z-index: -1;
-  filter: grayscale(1) brightness(.3) blur(calc(var(--halftone-size) * .25));
+  filter: grayscale(1) brightness(.4) blur(calc(var(--halftone-size) * .25));
   background: url(https://media1.tenor.com/m/1fPDuv-g7XMAAAAd/stufio-ghibli.gif) center / cover no-repeat;
 }
 
