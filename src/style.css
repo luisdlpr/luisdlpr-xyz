@@ -52,7 +52,7 @@
   --radius: 8px;
   --radius-lg: 12px;
   --content-width: 1700px;
-  --halftone-size: max(1vmin, 7px);
+  --halftone-size: max(.75vmin, 7px);
 }
 
 *,
@@ -80,7 +80,7 @@ body {
 main {
   padding: 1em;
   margin: 2em;
-  border-radius: var(--radius);
+  border-radius: var(--radius-lg);
   min-width: 350px;
   width: min(calc(100% - 2rem), var(--content-width));
   margin-inline: auto;
@@ -342,7 +342,7 @@ article:last-child {
 .bg-img {
   z-index: -1;
   filter: grayscale(1) brightness(.4) blur(calc(var(--halftone-size) * .25));
-  background: url(https://media1.tenor.com/m/1fPDuv-g7XMAAAAd/stufio-ghibli.gif) center / cover no-repeat;
+  background: url('./assets/bg.gif') center / cover no-repeat;
 }
 
 ::selection {
