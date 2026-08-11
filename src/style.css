@@ -439,4 +439,8 @@ article:last-child {
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
+
+  .bg-img {
+    background-image: url('./assets/bg.webp');
+  }
 }
