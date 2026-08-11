@@ -196,13 +196,40 @@ header, section {
   width: 100%;
 }
 
-section h2 {
-  position: absolute;
-  top: -0.6em;
-  left: 1em;
+section {
+  border-top: none;
+  padding: 0 0 1em 0;
+}
+
+section > *:not(.panel-title) {
+  margin-inline: 1em;
+}
+
+.panel-title {
   margin: 0;
-  padding: 0 0.5em;
-  background: var(--bg);
+  padding: 0;
+
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+
+  position: relative;
+  top: -0.6rem;
+  left: -2px;
+
+  width: calc(100% + 4px);
+}
+
+.panel-title::before {
+  content: "";
+  flex: 0 0 2rem;
+  border-top: 2px solid var(--border);
+}
+
+.panel-title::after {
+  content: "";
+  flex: 1;
+  border-top: 2px solid var(--border);
 }
 
 .entry {
