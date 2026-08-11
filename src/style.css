@@ -52,6 +52,7 @@
   --radius: 8px;
   --radius-lg: 12px;
   --content-width: 1700px;
+  --halftone-size: 1vmin;
 }
 
 *,
@@ -312,6 +313,36 @@ article:last-child {
   list-style: none;
   padding: 0;
   margin: 0;
+}
+
+.bg-effect {
+  z-index: -1;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  filter: contrast(250);
+  background-color: var(--ctp-crust);
+}
+
+.bg-img, .bg-halftone {
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  overflow: hidden;
+  opacity: .75;
+}
+
+.bg-halftone {
+  mix-blend-mode: screen;
+  background: radial-gradient(var(--halftone-size) var(--halftone-size), var(--ctp-crust), var(--ctp-teal)) center / var(--halftone-size) var(--halftone-size);
+}
+
+.bg-img {
+  z-index: -1;
+  filter: grayscale(1) brightness(.3) blur(calc(var(--halftone-size) * .25));
+  background: url(https://media1.tenor.com/m/1fPDuv-g7XMAAAAd/stufio-ghibli.gif) center / cover no-repeat;
 }
 
 ::selection {
