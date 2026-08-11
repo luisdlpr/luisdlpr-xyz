@@ -292,7 +292,6 @@ article:last-child {
   border-radius: 50%;
   border: 2px solid var(--border);
   background-color: var(--ctp-surface0);
-  margin-bottom: 2em;
 }
 
 #banner {
@@ -302,7 +301,9 @@ article:last-child {
 
 #banner-container {
   display: flex;
+  align-items: center;
   width: 100%;
+  margin-bottom: 1em;
 }
 
 #links {
