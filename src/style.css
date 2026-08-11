@@ -67,7 +67,7 @@ html {
 
 body {
   margin: 0;
-  min-height: 100vh;
+  min-height: 100dvh;
   color: var(--fg);
   font-family: var(--font-mono);
   font-size: 16px;
@@ -191,7 +191,7 @@ header, section {
   position: relative;
   padding: 1em;
   border: 2px solid var(--border);
-  min-height: 0;
+  min-height: max-content;
   height: 100%;
   width: 100%;
 }
@@ -262,11 +262,13 @@ section > *:not(.panel-title) {
   list-style: none;
   margin: 0.4em 0;
   padding: 0;
+  min-height: 0;
 }
 
 .tags li {
   font-size: 0.75em;
   line-height: 1;
+  min-height: 0;
   padding: 0.35em 0.6em;
   background: var(--bg-highlight);
 }
@@ -288,6 +290,21 @@ article {
 
 article:last-child {
   margin-bottom: 0;
+}
+
+@media (max-width: 1023px) {
+  main {
+    display: block;
+    /* bug on safari... */
+    /* grid-template-columns: 1fr; */
+    /* grid-template-rows: auto; */
+    /* grid-template-areas: none; */
+  }
+  main > section {
+    margin-top: 1rem;
+    height: auto;
+    min-height: max-content;
+  }
 }
 
 @media (min-width: 1024px) {
@@ -345,7 +362,7 @@ article:last-child {
 .bg-effect {
   z-index: -1;
   width: 100vw;
-  height: 100vh;
+  height: 100dvh;
   position: fixed;
   top: 0;
   left: 0;
