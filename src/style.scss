@@ -27,17 +27,17 @@
 }
 
 :root {
-  --ctp-rosewater: #f5e0dc;
-  --ctp-flamingo: #f2cdcd;
-  --ctp-pink: #f5c2e7;
+  // --ctp-rosewater: #f5e0dc;
+  // --ctp-flamingo: #f2cdcd;
+  // --ctp-pink: #f5c2e7;
   --ctp-mauve: #cba6f7;
-  --ctp-red: #f38ba8;
-  --ctp-maroon: #eba0ac;
+  // --ctp-red: #f38ba8;
+  // --ctp-maroon: #eba0ac;
   --ctp-peach: #fab387;
   --ctp-yellow: #f9e2af;
   --ctp-green: #a6e3a1;
   --ctp-teal: #94e2d5;
-  --ctp-sky: #89dceb;
+  // --ctp-sky: #89dceb;
   --ctp-sapphire: #74c7ec;
   --ctp-blue: #89b4fa;
   --ctp-lavender: #b4befe;
@@ -45,9 +45,9 @@
   --ctp-text: #cdd6f4;
   --ctp-subtext1: #bac2de;
   --ctp-subtext0: #a6adc8;
-  --ctp-overlay2: #9399b2;
-  --ctp-overlay1: #7f849c;
-  --ctp-overlay0: #6c7086;
+  // --ctp-overlay2: #9399b2;
+  // --ctp-overlay1: #7f849c;
+  // --ctp-overlay0: #6c7086;
   --ctp-surface2: #585b70;
   --ctp-surface1: #45475a;
   --ctp-surface0: #313244;
@@ -74,26 +74,13 @@
     'Fira Code', 'Fira Mono', 'JetBrains Mono', 'Cascadia Code', 'SFMono-Regular',
     Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
 
-  --radius-sm: 4px;
-  --radius: 8px;
+  // --radius-sm: 4px;
+  // --radius: 8px;
   --radius-lg: 12px;
   --content-width: 1700px;
   --halftone-size: max(.75vmin, 7px);
 }
 
-@mixin blurred-bg($transparent) {
-  $background: var(--bg-alt);
-  $blur: none;
-
-  @if $transparent == true {
-    $background: rgba(24, 24, 37, 0.7);
-    $blur: blur(15px);
-  }
-
-  background: $background;
-  -webkit-backdrop-filter: $blur;
-  backdrop-filter: $blur;
-}
 
 @keyframes slide-down-fade-in {
   from {
@@ -139,17 +126,21 @@ body {
 
 main {
   padding: 1em;
-  margin: 4em 2em 2em 2em;
+  margin: 4em auto 2em;
   border-radius: var(--radius-lg);
   min-width: 350px;
   width: min(calc(100% - 2rem), var(--content-width));
   margin-inline: auto;
   display: block;
 
-  @include blurred-bg(true);
+  background: rgba(24, 24, 37, 0.7);
+  -webkit-backdrop-filter: blur(15px);
+  backdrop-filter: blur(15px);
 
   &.opaque {
-    @include blurred-bg(false);
+    background: var(--bg-alt);
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
   }
 
   animation: slide-down-fade-in 0.6s ease-out;
@@ -230,15 +221,15 @@ h1 {
 }
 
 h2 {
-  color: var(--ctp-sapphire)
+  color: var(--ctp-sapphire);
 }
 
 h3 {
-  color: var(--ctp-teal)
+  color: var(--ctp-teal);
 }
 
 h4 {
-  color: var(--ctp-peach)
+  color: var(--ctp-peach);
 }
 
 p {
@@ -267,7 +258,8 @@ header, section {
 
 section {
   border-top: none;
-  padding: 0 0 1em 0;
+  padding: 0 0 1em;
+  margin-top: 1em;
 
   & > *:not(.panel-title) {
     margin-inline: 1em;
@@ -392,7 +384,6 @@ article {
 #avatar {
   width: 30%;
   height: auto;
-  object-fit: cover;
   border-radius: 50%;
   border: 2px solid var(--border);
   background-color: var(--ctp-surface0);
@@ -461,18 +452,6 @@ article {
   }
 }
 
-@media (max-width: 1023px) {
-  main {
-    display: block;
-
-    & > section {
-      margin-top: 1rem;
-      height: auto;
-      min-height: max-content;
-    }
-  }
-}
-
 @media (min-width: 1024px) {
   main {
     display: grid;
@@ -492,6 +471,9 @@ article {
     display: flex;
     flex-direction: column;
     justify-content: center
+  }
+  section {
+    margin-top: 0;
   }
   .panel-background { grid-area: bg; }
   .panel-skills { grid-area: skills; }
