@@ -1,10 +1,5 @@
 import './style.scss';
-import avatar from './assets/avatar.webp';
-import banner from './assets/carbon.webp';
 import bgWebp from './assets/bg.webp';
-
-document.getElementById('avatar').src = avatar;
-document.getElementById('banner').src = banner;
 
 const toggle = document.getElementById('panel-toggle');
 const panel = document.querySelector('main');
