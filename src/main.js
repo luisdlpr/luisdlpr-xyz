@@ -1,4 +1,4 @@
-import './style.css'
+import './style.scss'
 import avatar from './assets/avatar.webp'
 import banner from './assets/carbon.png'
 
