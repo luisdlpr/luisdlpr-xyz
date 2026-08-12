@@ -72,7 +72,7 @@
                 href="https://www.linkedin.com/in/luisvdlpreyes/"
                 target="_blank"
                 rel="noopener noreferrer"
-                class="Open my resume in a new tab"
+                aria-label="Open my resume in a new tab"
               >Resume</a>
             </li>
           </ul>
@@ -113,8 +113,8 @@
       </section>
       <section id="projects" class="panel-projects" aria-labelledby="projects-title">
         <h2 id="projects-title" class="panel-title">Projects</h2>
-          <article>
-            <h3>Kynect</h3>
+          <article id="project-kynect" aria-labelledby="project-kynect-title">
+            <h3 id="project-kynect-title">Kynect</h3>
             <p class="entry">
               <span>
                 <a 
@@ -145,7 +145,7 @@
             <p>
               Developed a cross-platform community management application (iOS, Android, Web) enabling social groups to manage members and events, provisioning cloud infrastructure as code (IaC) with Terraform and deploying production releases to the iOS App Store and Google Play.
             </p>
-            <ul class="tags">
+            <ul class="tags" aria-label="Tech stack for Kynect">
               <li class="tag-lang">TypeScript</li>
               <li class="tag-lang">Python</li>
               <li class="tag-web">React Native (Expo)</li>
@@ -159,8 +159,8 @@
               <li class="tag-cloud">Terraform</li>
             </ul>
           </article>
-          <article>
-              <h3>Open Sheets ORM</h3>
+          <article id="project-open-sheets-orm" aria-labelledby="project-open-sheets-orm-title">
+              <h3 id="project-open-sheets-orm-title">Open Sheets ORM</h3>
               <p class="entry">
                 <span>
                   <a 
@@ -191,7 +191,7 @@
             <p>
               Built and published an open-source TypeScript data access library for Google Sheets with schema modelling, query abstractions, and generated typed clients, released to npm through automated GitHub Actions CI/CD.
             </p>
-            <ul class="tags">
+            <ul class="tags" aria-label="Tech stack for Open Sheets ORM">
               <li class="tag-lang">TypeScript</li>
               <li class="tag-infra">GitHub Actions</li>
             </ul>
@@ -204,7 +204,7 @@
             href="https://www.linkedin.com/in/luisvdlpreyes/"
             target="_blank"
             rel="noopener noreferrer"
-            aria-label="Open my LinkedIn profile in a new tab"
+            aria-label="LinkedIn (open in a new tab)"
           >LinkedIn</a>
           or my
           <!-- TODO: real link -->
@@ -212,7 +212,7 @@
             href="https://www.linkedin.com/in/luisvdlpreyes/"
             target="_blank"
             rel="noopener noreferrer"
-            aria-label="Open my resume in a new tab"
+            aria-label="resume (open in a new tab)"
           >Resume</a>.
         </p>
         <h3>Experience</h3>
@@ -223,7 +223,7 @@
             <span class="date">Feb 2024 - Present</span>
             <span class="loc">Sydney</span>
           </p>
-          <ul class="tags">
+          <ul class="tags" aria-label="Tech stack at UBS">
             <li class="tag-lang">Python</li>
             <li class="tag-web">FastAPI</li>
             <li class="tag-web">HTMX</li>
@@ -248,7 +248,7 @@
             <span class="date">Feb 2023 - Feb 2024</span>
             <span class="loc">Sydney</span>
           </p>
-          <ul class="tags">
+          <ul class="tags" aria-label="Tech stack at IMS Stratus">
             <li class="tag-lang">JavaScript</li>
             <li class="tag-lang">TypeScript</li>
             <li class="tag-web">React</li>
@@ -264,7 +264,7 @@
             <span class="date">Nov 2022 - Feb 2023</span>
             <span class="loc">Sydney</span>
           </p>
-          <ul class="tags">
+          <ul class="tags" aria-label="Tech stack at Akuna Capital">
             <li class="tag-lang">Python</li>
             <li class="tag-infra">Docker</li>
             <li class="tag-cloud">Amazon S3</li>
