@@ -1,6 +1,6 @@
 import './style.scss';
 import avatar from './assets/avatar.webp';
-import banner from './assets/carbon.png';
+import banner from './assets/carbon.webp';
 
 document.getElementById('avatar').src = avatar;
 document.getElementById('banner').src = banner;
