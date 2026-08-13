@@ -148,7 +148,7 @@ body {
   filter: contrast(5);
 }
 
-.bg-video, .bg-img, .bg-halftone {
+.bg-video, .bg-halftone {
   position: fixed;
   overflow: hidden;
   width: 100%;
@@ -156,15 +156,11 @@ body {
   opacity: .75;
 }
 
-.bg-video, .bg-img {
+.bg-video {
   z-index: -1;
   object-fit: cover;
   opacity: .75;
   filter: grayscale(1) brightness(.4) blur(calc(var(--halftone-size) * .25));
-}
-
-.bg-img {
-  display: none;
 }
 
 .bg-halftone {
@@ -415,6 +411,33 @@ article {
     background: var(--bg-selected);
   }
 
+  &:disabled {
+    position: relative;
+    color: var(--fg-subtle);
+    cursor: not-allowed;
+
+    &::before {
+      background: var(--ctp-surface2);
+    }
+
+    &:hover::after {
+      content: attr(data-tip);
+      position: absolute;
+      top: calc(100% + 0.5rem);
+      right: 0;
+      padding: 0.35rem 0.6rem;
+      border: 2px solid var(--border);
+      border-radius: var(--radius-lg);
+      background: var(--ctp-base);
+      color: var(--fg);
+      font-size: 0.75rem;
+      font-family: var(--font-mono);
+      white-space: nowrap;
+      pointer-events: none;
+      z-index: 10;
+    }
+  }
+
   /* indicator light */
   &::before {
     content: "";
@@ -564,15 +587,6 @@ article {
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
-  }
-
-  .bg-video {
-    display: none;
-  }
-
-  .bg-img {
-    display: block;
-    background: url('./assets/bg.webp') center / cover no-repeat;
   }
 }
 

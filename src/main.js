@@ -1,6 +1,8 @@
 import './style.scss';
 import bgMp4 from './assets/bg.mp4';
 
+const motionPref = window.matchMedia('(prefers-reduced-motion: reduce)');
+
 const toggle = document.getElementById('panel-toggle');
 const panel = document.querySelector('main');
 
@@ -36,11 +38,27 @@ function applyBgStatic(paused) {
   } catch { }
 }
 
-applyBgStatic(localStorage.getItem('bg-static') === 'true');
+function syncMotion() {
+  if (motionPref.matches) {
+    applyBgStatic(true);
+    bgToggle.disabled = true;
+    bgToggle.removeAttribute('title');
+    bgToggle.dataset.tip = 'Reduced motion is on — animation disabled';
+  } else {
+    bgToggle.disabled = false;
+    bgToggle.title = 'Toggle background animation';
+    delete bgToggle.dataset.tip;
+    applyBgStatic(localStorage.getItem('bg-static') === 'true');
+  }
+}
 
 bgToggle.addEventListener('click', () => {
+  if (bgToggle.disabled) return;
   applyBgStatic(!bgToggle.classList.contains('static'));
 });
+
+syncMotion();
+motionPref.addEventListener('change', syncMotion);
 
 document.getElementById('name').addEventListener('click', (e) => {
   e.currentTarget.classList.toggle('collapsed');
