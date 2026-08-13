@@ -1,5 +1,5 @@
 import './style.scss';
-import bgWebp from './assets/bg.webp';
+import bgMp4 from './assets/bg.mp4';
 
 const toggle = document.getElementById('panel-toggle');
 const panel = document.querySelector('main');
@@ -20,10 +20,15 @@ toggle.addEventListener('click', () => {
 });
 
 const bgToggle = document.getElementById('bg-toggle');
-const bgImg = document.querySelector('.bg-img');
+const bgVideo = document.querySelector('.bg-video');
+bgVideo.src = bgMp4;
 
 function applyBgStatic(paused) {
-  bgImg.style.backgroundImage = paused ? `url(${bgWebp})` : '';
+  if (paused) {
+    bgVideo.pause();
+  } else {
+    bgVideo.play().catch(() => { });
+  }
   bgToggle.classList.toggle('static', paused);
   bgToggle.setAttribute('aria-pressed', String(paused));
   try {
