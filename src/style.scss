@@ -91,6 +91,17 @@
 
 /* === Keyframes === */
 
+@keyframes flip {
+  from {
+    transform: rotateX(0);
+    opacity: 1;
+  }
+  to {
+    transform: rotateX(90deg);
+    opacity: 0.8;
+  }
+}
+
 @keyframes slide-down-fade-in {
   from {
     opacity: 0;
@@ -337,6 +348,46 @@ article {
 #bash-prompt {
   margin-right: 0.5rem;
   color: var(--ctp-green);
+}
+
+#name {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+
+  span {
+    display: inline-block;
+    overflow: hidden;
+    transition:
+      opacity 0.35s,
+      width 0.35s,
+      color 0.25s;
+  }
+
+  .space {
+    width: 0.3em;
+  }
+
+  &:hover {
+    .keep-collapsed {
+      color: var(--ctp-green);
+    }
+  }
+
+  &.collapsed {
+    color: var(--ctp-green);
+    text-transform: lowercase;
+
+    &:hover .keep-collapsed:not(#bash-prompt) {
+      color: var(--accent);
+    }
+
+    span:not(.keep-collapsed),
+    .space {
+      opacity: 0;
+      width: 0;
+    }
+  }
 }
 
 /* === Components === */

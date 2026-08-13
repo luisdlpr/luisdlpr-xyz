@@ -37,3 +37,7 @@ bgToggle.addEventListener('click', () => {
   applyBgStatic(!bgToggle.classList.contains('static'));
 });
 
+document.getElementById('name').addEventListener('click', (e) => {
+  e.currentTarget.classList.toggle('collapsed');
+});
+
