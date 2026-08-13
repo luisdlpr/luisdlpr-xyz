@@ -60,9 +60,11 @@
   --ctp-base: #1e1e2e;
   --ctp-mantle: #181825;
   --ctp-crust: #11111b;
+  
+  --transparent-bg-sample: #10161f;
 
   --bg: var(--ctp-mantle);
-  --bg-alt: var(--ctp-base);
+  --bg-alt: var(--transparent-bg-sample);
   --bg-highlight: var(--ctp-surface0);
   --bg-active: var(--ctp-surface1);
   --bg-selected: var(--ctp-surface2);
