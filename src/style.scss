@@ -354,6 +354,7 @@ article {
   display: flex;
   align-items: center;
   cursor: pointer;
+  width: fit-content;
 
   span {
     display: inline-block;
@@ -581,14 +582,15 @@ article {
     gap: 1rem;
     align-items: start;
     grid-template-columns: repeat(5, minmax(0, 1fr));
-    grid-template-rows: repeat(6, minmax(0, 1fr));
+    grid-template-rows: repeat(7, minmax(0, 1fr));
     grid-template-areas:
       'h h p p p'
       'h h p p p'
       'h h p p p'
-      's b b b b'
-      's b b b b'
-      'c b b b b'
+      's s s c c'
+      'b b b b b'
+      'b b b b b'
+      'b b b b b'
   }
 
   header {
