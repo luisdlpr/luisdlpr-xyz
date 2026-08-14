@@ -48,7 +48,7 @@ function syncMotion() {
     bgToggle.disabled = false;
     bgToggle.title = 'Toggle background animation';
     delete bgToggle.dataset.tip;
-    applyBgStatic(localStorage.getItem('bg-static') === 'true');
+    applyBgStatic(localStorage.getItem('bg-static') !== 'false');
   }
 }
 
