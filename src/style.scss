@@ -73,8 +73,8 @@
   --fg-muted: var(--ctp-subtext1);
   --fg-subtle: var(--ctp-subtext0);
 
-  --accent: var(--ctp-mauve);
-  --accent-hover: var(--ctp-lavender);
+  --accent: var(--ctp-green);
+  --accent-hover: var(--ctp-teal);
 
   --border: var(--ctp-surface1);
 
@@ -234,15 +234,7 @@ h1 {
 }
 
 h2 {
-  color: var(--ctp-sapphire);
-}
-
-h3 {
-  color: var(--ctp-teal);
-}
-
-h4 {
-  color: var(--ctp-peach);
+  color: var(--accent);
 }
 
 p {
@@ -262,7 +254,6 @@ a {
 
 strong {
   font-weight: 700;
-  color: var(--accent);
 }
 
 article {
@@ -361,18 +352,17 @@ article {
   }
 
   &:hover {
-    .keep-collapsed {
-      color: var(--ctp-green);
+    span:not(.keep-collapsed) {
+      color: var(--fg);
+    }
+
+    .keep-collapsed:not(#bash-prompt) {
+      color: var(--ctp-sapphire)
     }
   }
 
   &.collapsed {
-    color: var(--ctp-green);
     text-transform: lowercase;
-
-    &:hover .keep-collapsed:not(#bash-prompt) {
-      color: var(--accent);
-    }
 
     span:not(.keep-collapsed),
     .space {
@@ -509,7 +499,7 @@ article {
   }
 
   .org {
-    color: var(--ctp-green);
+    font-weight: 500;
   }
 
   .date, .loc {
