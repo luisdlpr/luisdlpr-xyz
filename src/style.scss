@@ -229,12 +229,8 @@ h1, h2, h3 {
   font-size: 1rem;
 }
 
-h1 {
-  color: var(--accent);
-}
-
-h2 {
-  color: var(--accent);
+h1, h2, h3, h4 {
+  color: var(--accent)
 }
 
 p {
